@@ -20,7 +20,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg-aulainfracloud" {
   name     = "aulainfracloudterraform"
-  location = "West US 2"
+  location = "Central US"
 }
 
 resource "azurerm_virtual_network" "vnet-aulainfra" {
@@ -110,12 +110,12 @@ resource "azurerm_virtual_machine" "vm-aulainfra" {
   location              = azurerm_resource_group.rg-aulainfracloud.location
   resource_group_name   = azurerm_resource_group.rg-aulainfracloud.name
   network_interface_ids = [azurerm_network_interface.nic-aulainfra.id]
-  vm_size               = "Standard_DS1_v2"
+  vm_size               = "Standard_DS1"
 
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "16.04-LTS"
+    sku       = "18.04-LTS"
     version   = "latest"
   }
 
