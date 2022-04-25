@@ -27,15 +27,17 @@ public class ImcController {
     private String calculateImcText (double imc) {
         String imcDescription = "";
         if (imc <= 18.5) {
-            imcDescription = "Sua Classificação é de Magreza";
+            imcDescription = "Magreza, quando o resultado é menor que 18,5 kg/m2";
         } else if (imc >= 18.5 && imc <= 24.9) {
-            imcDescription =  "Sua Classificação Está Dentro do Normal";
+            imcDescription =  "Sua classificação está dentro do Normal, quando o resultado está entre 18,5 e 24,9 kg/m2";
         } else if (imc >= 25.0 && imc <= 29.9) {
-            imcDescription =  "Sua Classificação é de Sobrepeso I";
-        } else if (imc >= 30.0 && imc <= 39.9) {
-            imcDescription =  "Sua Classificação é Obesidade II";
+            imcDescription =  "Sua classificação é de Sobrepeso I, quando o resultado está entre 24,9 e 30 kg/m2";
+        } else if (imc >= 30.0 && imc <= 34.9) {
+            imcDescription =  "Sua classificação é Obesidade I, quando o resultado está entre 30 e 34.9 kg/m2";
+        }else if (imc >= 35 && imc <= 39.9) {
+            imcDescription =  "Sua classificação é Obesidade II, quando o resultado está entre 35 e 39.9 kg/m2";
         } else if (imc <= 40.0 ){
-            imcDescription = "Sua Classificação é Obesidade Grave III";
+            imcDescription = "Sua classificação é Obesidade Grave III, quando o resultado é maior que 40.0 kg/m2";
         }
 
         return imcDescription;
